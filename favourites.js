@@ -1,3 +1,4 @@
+console.log("loading");
 let favourites = document.cookie.split(";"); //get favourites list from localstorage
 console.log(favourites);
 //favourites = favourites.split(","); //split it with comma and converting it to array
