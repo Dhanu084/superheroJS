@@ -14,6 +14,7 @@ searchs = (e) => {
   fetch(proxyurl + `https://superheroapi.com/api/290534865526502/search/${e}`)
     .then((res) => res.json())
     .then((data) => {
+      console.log(data);
       for (let i = 0; i < 5; i++) {
         let newDiv = document.createElement("div"); //create new container for each superhero
         newDiv.innerText = data.results[i].name;
