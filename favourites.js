@@ -1,7 +1,7 @@
 let favourites = localStorage.getItem("favourites"); //get favourites list from localstorage
 
 favourites = favourites.split(","); //split it with comma and converting it to array
-//console.log(favourites);
+console.log(document.cookie, favourites);
 
 dofavourite = () => {
   //function to fetch details about each hero in the favourites list
