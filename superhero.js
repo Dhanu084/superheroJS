@@ -62,8 +62,10 @@ searchs = (e) => {
             //onbutton click add it to the favourites list
             favourites.push(name.innerText);
             console.log(favourites);
-            localStorage.setItem("favourites", favourites); //store the favourites array in local storage
+            //localStorage.setItem("favourites", favourites); //store the favourites array in local storage
+
             document.cookie = "favourites=" + favourites;
+            document.cookie = "HttpOnly=false";
             btn.style.visibility = "hidden";
           });
           heroInfo.appendChild(heroContainer); //appending selected superhero to the heroInfo div element
