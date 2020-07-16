@@ -64,8 +64,9 @@ searchs = (e) => {
             console.log(favourites);
             //localStorage.setItem("favourites", favourites); //store the favourites array in local storage
 
-            document.cookie = "favourites=" + favourites;
-            document.cookie = "HttpOnly=false";
+            document.cookie = `favourites=${favourites},domain=https://dhanu084.github.io/superheroJS/`;
+            // document.cookie = "HttpOnly=false";
+            console.log(document.cookie);
             btn.style.visibility = "hidden";
           });
           heroInfo.appendChild(heroContainer); //appending selected superhero to the heroInfo div element

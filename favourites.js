@@ -1,8 +1,8 @@
-console.log("loading");
-let favourites = document.cookie.split(";"); //get favourites list from localstorage
+console.log(document.cookie);
+let favourites = document.cookie.split(","); //get favourites list from localstorage
 console.log(favourites);
 //favourites = favourites.split(","); //split it with comma and converting it to array
-favourites = favourites[1].substring(12).split(",");
+favourites = favourites[0].substring(12).split(",");
 console.log(favourites);
 
 favourites.forEach((element) => {
