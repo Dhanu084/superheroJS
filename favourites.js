@@ -1,7 +1,8 @@
-let favourites = localStorage.getItem("favourites"); //get favourites list from localstorage
-
-favourites = favourites.split(","); //split it with comma and converting it to array
-console.log(document.cookie, favourites);
+let favourites = document.cookie.split(";"); //get favourites list from localstorage
+console.log(favourites);
+//favourites = favourites.split(","); //split it with comma and converting it to array
+favourites = favourites[1].substring(12).split(",");
+console.log(favourites);
 
 favourites.forEach((element) => {
   //const proxyurl = "https://cors-anywhere.herokuapp.com/";
@@ -56,8 +57,8 @@ favourites.forEach((element) => {
           favourites.splice(index, 1);
         }
         console.log(favourites);
-        browser.storage.local.setItem("favourites", favourites);
-        //localStorage.setItem("favourites", favourites);
+        //browser.storage.local.setItem("favourites", favourites);
+        document.cookie = "favourites=" + favourites;
         heroInfo.removeChild(heroContainer);
       });
       heroInfo.appendChild(heroContainer);
