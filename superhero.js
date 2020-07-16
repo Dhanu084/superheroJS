@@ -10,8 +10,8 @@ searchs = (e) => {
 
   searchResults.style.visibility = "visible";
 
-  const proxyurl = "https://cors-anywhere.herokuapp.com/";
-  fetch(proxyurl + `https://superheroapi.com/api/290534865526502/search/${e}`)
+  //const proxyurl = "https://cors-anywhere.herokuapp.com/";
+  fetch(`https://superheroapi.com/api.php/290534865526502/search/${e}`)
     .then((res) => res.json())
     .then((data) => {
       console.log(data);

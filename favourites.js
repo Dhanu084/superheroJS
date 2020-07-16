@@ -5,10 +5,8 @@ console.log(document.cookie, favourites);
 
 if (favourites.length === 0 || favourites[0] === "") return;
 favourites.forEach((element) => {
-  const proxyurl = "https://cors-anywhere.herokuapp.com/";
-  fetch(
-    proxyurl + `https://superheroapi.com/api/290534865526502/search/${element}`
-  )
+  //const proxyurl = "https://cors-anywhere.herokuapp.com/";
+  fetch(`https://superheroapi.com/api.php/290534865526502/search/${e}`)
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
