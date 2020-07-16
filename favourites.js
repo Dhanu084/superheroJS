@@ -5,7 +5,7 @@ console.log(document.cookie, favourites);
 
 favourites.forEach((element) => {
   //const proxyurl = "https://cors-anywhere.herokuapp.com/";
-  fetch(`https://superheroapi.com/api.php/290534865526502/search/${e}`)
+  fetch(`https://superheroapi.com/api.php/290534865526502/search/${element}`)
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
@@ -56,7 +56,8 @@ favourites.forEach((element) => {
           favourites.splice(index, 1);
         }
         console.log(favourites);
-        localStorage.setItem("favourites", favourites);
+        browser.storage.local.setItem("favourites", favourites);
+        //localStorage.setItem("favourites", favourites);
         heroInfo.removeChild(heroContainer);
       });
       heroInfo.appendChild(heroContainer);
