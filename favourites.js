@@ -3,7 +3,6 @@ let favourites = localStorage.getItem("favourites"); //get favourites list from 
 favourites = favourites.split(","); //split it with comma and converting it to array
 console.log(document.cookie, favourites);
 
-if (favourites.length === 0 || favourites[0] === "") return;
 favourites.forEach((element) => {
   //const proxyurl = "https://cors-anywhere.herokuapp.com/";
   fetch(`https://superheroapi.com/api.php/290534865526502/search/${e}`)
