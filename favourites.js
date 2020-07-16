@@ -1,9 +1,10 @@
-let favourites = localStorage.getItem("favourites");
+let favourites = localStorage.getItem("favourites"); //get favourites list from localstorage
 
-favourites = favourites.split(",");
-console.log(favourites);
+favourites = favourites.split(","); //split it with comma and converting it to array
+//console.log(favourites);
 
 dofavourite = () => {
+  //function to fetch details about each hero in the favourites list
   if (favourites.length === 0 || favourites[0] === "") return;
   favourites.forEach((element) => {
     const proxyurl = "https://cors-anywhere.herokuapp.com/";

@@ -1,8 +1,9 @@
-let search = true;
-var favourites = [];
+let favourites = []; //array to store favourite heroes
+
 searchs = (e) => {
   let searchResults = document.getElementById("search-results");
   if (e == null || e.length == 0) {
+    //if length of the element is 0 make the element invisible
     searchResults.style.visibility = "hidden";
     return;
   }
@@ -13,9 +14,8 @@ searchs = (e) => {
   fetch(proxyurl + `https://superheroapi.com/api/290534865526502/search/${e}`)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       for (let i = 0; i < 5; i++) {
-        let newDiv = document.createElement("div");
+        let newDiv = document.createElement("div"); //create new container for each superhero
         newDiv.innerText = data.results[i].name;
         newDiv.addEventListener("click", () => {
           let heroInfo = document.getElementById("hero-info");
@@ -58,24 +58,15 @@ searchs = (e) => {
           heroContainer.classList.add("hero-container");
 
           btn.addEventListener("click", (e) => {
+            //onbutton click add it to the favourites list
             favourites.push(name.innerText);
             console.log(favourites);
-            localStorage.setItem("favourites", favourites);
+            localStorage.setItem("favourites", favourites); //store the favourites array in local storage
             btn.style.visibility = "hidden";
           });
-          heroInfo.appendChild(heroContainer);
+          heroInfo.appendChild(heroContainer); //appending selected superhero to the heroInfo div element
         });
         searchResults.prepend(newDiv);
       }
     });
-};
-
-clear = () => {
-  console.log("clearing");
-  let searchResults = document.getElementById("search-results");
-  let child = searchResults.lastElementChild;
-  while (child) {
-    searchResults.removeChild(child);
-    child = searchResults.lastElementChild;
-  }
 };
