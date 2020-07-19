@@ -64,7 +64,7 @@ searchs = (e) => {
             console.log(favourites);
             //localStorage.setItem("favourites", favourites); //store the favourites array in local storage
 
-            document.cookie = `favourites=${favourites} path="/"`;
+            document.cookie = `favourites=${favourites} samesite=none`;
             // document.cookie = "HttpOnly=false";
             console.log(document.cookie);
             btn.style.visibility = "hidden";
