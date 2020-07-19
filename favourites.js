@@ -61,7 +61,7 @@ favourites.forEach((element) => {
         }
         console.log(favourites);
         //browser.storage.local.setItem("favourites", favourites);
-        document.cookie = "favourites=" + favourites;
+        document.cookie = "favourites=" + favourites + ";path=" / "";
         heroInfo.removeChild(heroContainer);
       });
       heroInfo.appendChild(heroContainer);
