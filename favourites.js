@@ -1,8 +1,10 @@
 console.log(document.cookie);
+
 let favourites = document.cookie.split(","); //get favourites list from localstorage
+favourites = document.cookie.split("=");
 console.log(favourites);
-//favourites = favourites.split(","); //split it with comma and converting it to array
-favourites = favourites[0].substring(12).split(",");
+favourites = favourites[1].split(","); //split it with comma and converting it to array
+//favourites = favourites[0].substring(12).split(",");
 console.log(favourites);
 
 favourites.forEach((element) => {
