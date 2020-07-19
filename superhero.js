@@ -62,9 +62,9 @@ searchs = (e) => {
             //onbutton click add it to the favourites list
             favourites.push(name.innerText);
             console.log(favourites);
-            localStorage.setItem("favourites", JSON.stringify(favourites)); //store the favourites array in local storage
+            //localStorage.setItem("favourites", JSON.stringify(favourites)); //store the favourites array in local storage
 
-            document.cookie = `favourites=${favourites}`;
+            document.cookie = `favourites=${favourites},path=./favourites.html`;
             // document.cookie = "HttpOnly=false";
             console.log(document.cookie);
             btn.style.visibility = "hidden";

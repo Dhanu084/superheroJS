@@ -1,13 +1,14 @@
-console.log(localStorage.getItem("favourites"));
+console.log(document.cookie);
 
 let favourites = document.cookie.split(","); //get favourites list from localstorage
 favourites = document.cookie.split("=");
 console.log(favourites);
 favourites = favourites[1].split(","); //split it with comma and converting it to array
-//favourites = favourites[0].substring(12).split(",");
-console.log(favourites);
+//favourites = favourites[0].substring(12).split(",");;
+console.log(favourites[0]);
 
 favourites.forEach((element) => {
+  console.log(element);
   //const proxyurl = "https://cors-anywhere.herokuapp.com/";
   fetch(`https://superheroapi.com/api.php/290534865526502/search/${element}`)
     .then((res) => res.json())
