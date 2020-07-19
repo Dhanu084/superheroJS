@@ -1,4 +1,4 @@
-console.log(document.cookie);
+console.log(localStorage.getItem("favourites"));
 
 let favourites = document.cookie.split(","); //get favourites list from localstorage
 favourites = document.cookie.split("=");
